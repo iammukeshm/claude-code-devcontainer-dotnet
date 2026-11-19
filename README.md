@@ -43,8 +43,8 @@ claude --dangerously-skip-permissions
 ## Gotchas this repo works around
 
 1. The `claude-code` dev container feature (1.0.5) installs its own `/usr/local/bin/init-firewall.sh`. If your script has the same name, the feature overwrites it. In my test the feature's script then failed with `ERROR: Failed to resolve statsig.anthropic.com`. This repo names its script `sandbox-firewall.sh`.
-3. Restricting port 53 to the container's resolver does not stop DNS tunneling, because the resolver Docker gives the container is public (1.1.1.1 and 8.8.8.8 in my test) and forwards a query for any domain. This repo filters DNS by name instead.
 2. `mcr.microsoft.com/devcontainers/dotnet:10.0` gives `vscode` passwordless sudo for everything, so any process in the container can run `sudo iptables -F` and turn the firewall off. The Dockerfile deletes `/etc/sudoers.d/vscode`.
+3. Restricting port 53 to the container's resolver does not stop DNS tunneling, because the resolver Docker gives the container is public (1.1.1.1 and 8.8.8.8 in my test) and forwards a query for any domain. This repo filters DNS by name instead.
 
 ## Known limits
 
