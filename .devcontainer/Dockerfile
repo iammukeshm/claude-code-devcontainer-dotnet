@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/devcontainers/dotnet:10.0
 
 # Tools for the outbound firewall.
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends iptables ipset dnsutils jq \
+    && apt-get install -y --no-install-recommends iptables ipset dnsutils dnsmasq-base jq \
     && rm -rf /var/lib/apt/lists/*
 
 COPY sandbox-firewall.sh /usr/local/bin/sandbox-firewall.sh

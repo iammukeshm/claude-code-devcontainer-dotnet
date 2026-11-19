@@ -6,7 +6,7 @@
     "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
   },
   "remoteUser": "vscode",
-  "runArgs": ["--cap-add=NET_ADMIN", "--cap-add=NET_RAW"],
+  "runArgs": ["--cap-add=NET_ADMIN", "--cap-add=NET_RAW", "--dns=127.0.0.1"],
   "mounts": [
     "source=claude-config-${devcontainerId},target=/home/vscode/.claude,type=volume",
     "source=nuget-packages-${devcontainerId},target=/home/vscode/.nuget/packages,type=volume"
