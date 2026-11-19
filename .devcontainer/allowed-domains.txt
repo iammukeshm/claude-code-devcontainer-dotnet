@@ -1,0 +1,12 @@
+# Claude Code (see the "Network access requirements" page in the Claude Code docs)
+api.anthropic.com
+claude.ai
+claude.com
+platform.claude.com
+# NuGet restore
+api.nuget.org
+www.nuget.org
+# Git over HTTPS
+github.com
+api.github.com
+codeload.github.com
